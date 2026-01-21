@@ -22,10 +22,18 @@ import org.springframework.security.web.SecurityFilterChain;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
+//Gerei as chaves RSA usando o comando abaixo no terminal:
+//openssl genrsa -out key.priv 2048
+//openssl rsa -in key.priv -pubout -out key.pub
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
+    //Um detalhe: JAMAIS devemos subir as chaves privadas para repositórios públicos.
+    //Aqui estou fazendo isso apenas para fins didáticos.
+    //Em um ambiente real, devemos usar variáveis de ambiente ou serviços de gerenciamento de segredos.
+    
     @Value("${jwt.public.key}")
     private RSAPublicKey chavePublica;
 

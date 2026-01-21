@@ -14,7 +14,7 @@ public class UsuarioService {
     private final PerfilRepository perfilRepository;
     private final BCryptPasswordEncoder codificadorSenha;
 
-    //Usei o construtor para a injeção das dependencias
+    //Usei a injeção por construtor.
     //Poderiamos fazer essa injeção de algumas maneiras como por atributo, por função, ou por construtor.
     //Mas o construtor é o mais recomendado atualmente e além disso já possui implicito o @Autowired.
     //Usarei esse padrão em todos os demais serviços também, para manter a coerência.
