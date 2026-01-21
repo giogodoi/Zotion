@@ -27,6 +27,7 @@ public class AutenticacaoController {
     private final JwtEncoder jwtEncoder;
     private final BCryptPasswordEncoder codificadorSenha;
 
+
     public AutenticacaoController(UsuarioService usuarioService,
                                   UsuarioRepository usuarioRepository,
                                   JwtEncoder jwtEncoder,
