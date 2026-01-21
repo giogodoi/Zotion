@@ -1,5 +1,4 @@
-# Precisamos criar uma role USER caso ela não exista para evitar erros na inicialização da aplicação.
-
-INSERT INTO roles (role_id, name) 
-VALUES (gen_random_uuid(), 'USER') 
-ON CONFLICT (name) DO NOTHING;
+-- Garanta que os nomes das colunas coincidam com a Entity (nome em vez de name)
+INSERT INTO perfis (perfil_id, nome) 
+VALUES (gen_random_uuid(), 'ROLE_USER') 
+ON CONFLICT (nome) DO NOTHING;
