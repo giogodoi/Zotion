@@ -37,6 +37,15 @@ public class LembreteController {
         return ResponseEntity.ok(lembreteService.listarPorUsuario(usuario));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Lembrete> editar(@PathVariable UUID id, @RequestBody Lembrete dadosAtualizados, JwtAuthenticationToken token) {
+        Usuario utilizador = usuarioRepository.findById(UUID.fromString(token.getName()))
+                .orElseThrow(() -> new RuntimeException("Utilizador não encontrado"));
+
+        Lembrete lembrete = lembreteService.editar(id, dadosAtualizados, utilizador);
+        return ResponseEntity.ok(lembrete);
+    }
+
     @PostMapping
     public ResponseEntity<Lembrete> criar(@RequestBody @Valid Lembrete lembrete, JwtAuthenticationToken token) {
         var usuario = obterUsuarioLogado(token);
