@@ -4,6 +4,7 @@ import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,13 +41,21 @@ public class SecurityConfig {
     @Value("${jwt.private.key}")
     private RSAPrivateKey chavePrivada;
 
+
     @Bean
     public SecurityFilterChain filtroSeguranca(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
             .sessionManagement(sessao -> sessao.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(autorizar -> autorizar
-                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .requestMatchers(
+                    "/v3/api-docs/**", 
+                    "/v3/api-docs.yaml",
+                    "/swagger-ui/**", 
+                    "/swagger-ui.html",
+                    "/webjars/**",
+                    "/swagger-resources/**"
+                ).permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/autenticacao/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/autenticacao/cadastro").permitAll()
                 .anyRequest().authenticated()
