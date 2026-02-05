@@ -53,4 +53,12 @@ public class NotaController {
         var usuario = obterUsuarioLogado(token);
         return ResponseEntity.ok(notaService.editar(id, nota, usuario));
     }
+
+    @PatchMapping("/{id}/completar")
+    public ResponseEntity<Nota> alternarConclusao(@PathVariable UUID id, JwtAuthenticationToken token) {
+        var usuario = obterUsuarioLogado(token);
+        Nota nota = notaService.buscarPorId(id, usuario);
+        nota.setRealizada(!nota.isRealizada());
+        return ResponseEntity.ok(notaService.salvar(nota, usuario));
+    }
 }

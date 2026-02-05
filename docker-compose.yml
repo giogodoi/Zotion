@@ -2,6 +2,8 @@ services:
   db:
     image: postgres:15-alpine
     container_name: zotion-db
+    networks:
+      - backend-net
     environment:
       - POSTGRES_DB=zotion_db
       - POSTGRES_USER=postgres
@@ -13,12 +15,15 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   app:
     build: ./backend
     container_name: zotion-app
-    ports:
-      - "8080:8080"
+    networks:
+      - backend-net
+      - frontend-net
     depends_on:
       db:
         condition: service_healthy
@@ -29,3 +34,23 @@ services:
       - SPRING_DATASOURCE_PASSWORD=postgres
       - JWT_PUBLIC_KEY=classpath:certs/key.pub
       - JWT_PRIVATE_KEY=classpath:certs/key.priv
+
+  frontend:
+    build: ./frontend
+    container_name: zotion-frontend
+    networks:
+      - frontend-net
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+networks:
+#Implementada na mentoria (um abraço Édney! Salvou demais :D)
+#Poderiamos fazer uma unica network, a ideia aqui é somente distinguir o acesso do frontend
+#O Frontend não consegue "enxergar" o banco de dados, somente o backend consegue.
+  backend-net: 
+  frontend-net: 
+
+volumes:
+  postgres_data:
