@@ -1,0 +1,251 @@
+
+.notes-page-full {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+
+  .notes-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+
+    .add-note-btn {
+      background: #007aff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+      }
+    }
+  }
+
+
+  .notes-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding-bottom: 40px;
+
+
+  }
+
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modal-glass-box {
+    background: rgba(28, 28, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    &.zotion-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input,
+      textarea {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 12px;
+        color: white;
+        font-size: 16px;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+
+        &:focus {
+          border-color: #007aff;
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: none;
+      }
+
+      .color-selector {
+        margin-top: 10px;
+
+        label {
+          display: block;
+          font-size: 14px;
+          margin-bottom: 10px;
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        .dots-container {
+          display: flex;
+          gap: 12px;
+
+          .dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+
+            &.active {
+              border-color: white;
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+
+    &.details-modal {
+      .details-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h3 {
+          margin: 0;
+          text-align: left;
+        }
+
+        .badge {
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 700;
+          color: white;
+        }
+      }
+
+      .details-body {
+        margin-bottom: 25px;
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 1.6;
+          white-space: pre-wrap;
+        }
+
+        &.scrollable {
+          max-height: 400px;
+          overflow-y: auto;
+          padding-right: 10px;
+
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 20px;
+
+      button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .save-btn {
+        background: #007aff;
+
+        &:hover {
+          background: #0056b3;
+        }
+      }
+
+      .delete-btn {
+        background: rgba(255, 59, 48, 0.2);
+        color: #ff3b30;
+
+        &:hover {
+          background: rgba(255, 59, 48, 0.3);
+        }
+      }
+
+      .mark-done-btn {
+        background: rgba(52, 199, 89, 0.2);
+        color: #34c759;
+
+        &.done {
+          background: rgba(255, 159, 10, 0.2);
+          color: #ff9f0a;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

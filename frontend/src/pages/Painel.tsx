@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import '../styles/painel.scss'; // Arquivo renomeado
+import '../styles/painel.scss'; 
 
 interface PainelProps {
   onLogout: () => void;
@@ -10,10 +10,10 @@ const Painel: React.FC<PainelProps> = ({ onLogout }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Verifica se o usuário está na rota raiz do painel
+
   const isHome = location.pathname === '/painel' || location.pathname === '/painel/';
 
-  // Itens do menu com caminhos e ícones simplificados
+ 
   const menuItems = [
     { label: 'Calendário', iconPath: '/icons/calendar.png', path: 'calendario' },
     { label: 'Lembretes', iconPath: '/icons/reminders.png', path: 'lembretes' },
@@ -24,7 +24,7 @@ const Painel: React.FC<PainelProps> = ({ onLogout }) => {
   const nome = localStorage.getItem('@Zotion:usuario') || 'Usuário';
 
   return (
-    <div className="dashboard-container"> {/* Classe mantida conforme o SCSS original */}
+    <div className="dashboard-container"> 
       <header className="main-header">
         <div className="brand" onClick={() => navigate('/painel')}>
           <img src="/logo.png" alt="Zotion Logo" className="brand-logo" />

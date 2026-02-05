@@ -1,0 +1,89 @@
+.ai-instruction-modal {
+    text-align: center;
+
+    .ai-icon-header {
+        font-size: 55px;
+        margin-bottom: 15px;
+        animation: pulse-ai 2s infinite;
+    }
+
+    h2 {
+        background: linear-gradient(90deg, #007aff, #5856d6);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .instruction-content {
+        text-align: left;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 22px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        ul {
+            padding-left: 20px;
+
+            li {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 12px;
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .confirm-ai-btn {
+            background: #007aff;
+            color: white;
+
+            &:hover {
+                background: #0056b3;
+            }
+        }
+
+        .cancel-btn {
+            background: #3a3a3c;
+            color: white;
+
+            &:hover {
+                background: #4a4a4c;
+            }
+        }
+    }
+}
+
+@keyframes pulse-ai {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px #007aff);
+    }
+
+    50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 15px #5856d6);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px #007aff);
+    }
+}
