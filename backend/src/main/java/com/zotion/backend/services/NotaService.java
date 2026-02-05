@@ -3,7 +3,6 @@ package com.zotion.backend.services;
 import com.zotion.backend.models.Nota;
 import com.zotion.backend.models.Usuario;
 import com.zotion.backend.repositories.NotaRepository;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -19,11 +18,7 @@ public class NotaService {
     }
 
     public List<Nota> listarPorUsuario(Usuario usuario) {
-        // Ordenação didática: Fixadas no topo, depois por data de criação decrescente
-        Sort ordenacao = Sort.by("fixada").descending()
-                             .and(Sort.by("dataCriacao").descending());
-
-        return notaRepository.findAllByUsuario(usuario, ordenacao);
+        return notaRepository.findAllByUsuario(usuario);
     }
 
     @Transactional
@@ -55,7 +50,7 @@ public class NotaService {
         existente.setTitulo(novosDados.getTitulo());
         existente.setConteudo(novosDados.getConteudo());
         existente.setCor(novosDados.getCor());
-        existente.setFixada(novosDados.isFixada());
+        existente.setRealizada(novosDados.isRealizada());
 
         return notaRepository.save(existente);
     }
