@@ -137,6 +137,7 @@ GEMINI_API_KEY=sua_chave_aqui
 - **Frontend:** Desenvolvido em React com Vite e TypeScript para alta performance.
 
 - **SWAGGER-UI:** Foi implementada a biblioteca SpringDoc, que permite a quem for usar a api ter mapeado os endpoints para requisição.
+Para acessar o Swagger, acesse http://localhost/swagger-ui/index.html
 
 ---
 
