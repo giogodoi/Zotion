@@ -1,0 +1,240 @@
+{
+  "info": {
+    "_postman_id": "e5ea239d-75a6-4d07-a59d-1235fcc2ecec",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52152088",
+    "_collection_link": "https://go.postman.co/collection/52152088-e5ea239d-75a6-4d07-a59d-1235fcc2ecec?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "localhost/api/lembretes",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ6b3Rpb24tYmFja2VuZCIsInN1YiI6ImQ3NDUzMGQwLWM5NDUtNGQ0MS1iYmY2LTViODEwZTU2YjZkZSIsImV4cCI6MTc3MDMzNDczMSwiaWF0IjoxNzcwMzM0NDMxLCJzY29wZSI6IiJ9.nr-8Xe9a9qwCTghUKEF9dTnDiifKfmtYpgMl3XKmRV1fOPHZIK7wC5sCb1wwWkd5gllkoQpdFXU3VOO3IoY5-Eql8NhM7VXJ0XqfW0TAyfZyz5MV0JlF5gAVE-AlSNP6yJFBT4D18bqcoeCgfVKRY6qVRUN0nuIfFmJteNYlPhrnJjEns4NoGv0OJM_DoDhYZWvQMJqrivsJR9U1fqTDsl1SdoN5WJdCkiQoeAdLYRKH7xjFRvXJbVry5Y6WLFYdf3w6bAMxNp9R74bcWsUxh-0UlT78Z29aOL8_yHxQ88M-3im8mAkID5-dFSyUG0zMUsf977N1DLh2deHpl7f2ng",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost/api/lembretes",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "lembretes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost/api/autenticacao/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost/api/autenticacao/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "autenticacao",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost/api/autenticacao/cadastro",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost/api/autenticacao/cadastro",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "autenticacao",
+            "cadastro"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost/api/lembretes",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ6b3Rpb24tYmFja2VuZCIsInN1YiI6ImQ3NDUzMGQwLWM5NDUtNGQ0MS1iYmY2LTViODEwZTU2YjZkZSIsImV4cCI6MTc3MDMzNTAxOSwiaWF0IjoxNzcwMzM0NzE5LCJzY29wZSI6IiJ9.PumNm4UNBYojYaZ19k5ogLX4kTyhXOakkGRTftvM6_BXQXizXz59F_kcI0TllO06lYDzG0hdbptdJTgh7Z6DMd17KgYDy2gDZt2j09BKo8AvC9bIxUdO6FhEP9wbjAMbprmoMp1QP6thSkT60BB3VMqdBncvoUUeKt0IqDJd-LCEKd7zQRDsVyCl1KxD2dsxxaq8jjIX2ZM0f7Vwax0uoGb9iuxHFlHW0o64PM3UplhnfXx0Myy9kW3l3R1NTVoEF5V45SQHVc1JfuTXBT8bRHtmLgUZu3JqVoLPA_uVts4IZ6Yeaa-2oM0gJwg2SQJt3nYrbPBJg7OB-7AiokZGfA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/lembretes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "lembretes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost/api/lembretes/{coloque a id do lembrete}",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ6b3Rpb24tYmFja2VuZCIsInN1YiI6ImU1ODQzMDQ5LWU3MzEtNDg1Ni1hY2E1LTUyYjcwNmJiMTU3NyIsImV4cCI6MTc2OTI4OTI3MywiaWF0IjoxNzY5Mjg4OTczLCJzY29wZSI6IiJ9.fnoN0Cb7pS0kAKYGf55Xogp_zhCs9ZwAhTcQ_b6wjnmgJZbeNdb31lwX7B3e3aUAcepcz1id1ZZKQF2jEBdIZEQ4OqzGmANEcy5M3B2AV6OVUAkOOUjJm51LZv2AFERou1z4NxnCg7E6xHwTYVyO26_MyZ_sA3h7s-Hmv3TqB5PTzy6_ZiHwTDxZlU5I5D67r02GnqGPfKOh4J7U_O6umC3iY3WHBEZKHysFYGkIPTphU8M19kYdtpwHNwg1af4W7qmKLJFUq-Qw_xwALuXYs3ZNVc39bRXD_MJNNwaL3jHrd5vtjRghISx41J4O8q9fehxkQ9SdWLJBQjBHCN13uQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "    {\r\n        \"dataHora\": \"2025-10-30T06:00:00\",\r\n        \"descricao\": \"Teste.\",\r\n        \"nome\": \"Prova 2\",\r\n        \"prioridade\": 3,\r\n        \"realizada\": false\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost/api/lembretes/{coloque a id do lembrete}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "lembretes",
+            "{coloque a id do lembrete}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost/api/lembretes/9a8243f8-04ef-474c-89e4-d59af31cff4c/completar",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ6b3Rpb24tYmFja2VuZCIsInN1YiI6ImQ3NDUzMGQwLWM5NDUtNGQ0MS1iYmY2LTViODEwZTU2YjZkZSIsImV4cCI6MTc3MDMzNTEyNCwiaWF0IjoxNzcwMzM0ODI0LCJzY29wZSI6IiJ9.hzoPo5fIiglu4FGrolVhszcskTGfdL9ufNj5FhJaffkaCQMAzyzZdzgC8480FoiTj8QC9-fbYgGjfLlj0DVTQxnF9wsP6RWim1oelntciFpK-GnVQD7ptAd8hvHfsOm2rtr8lR-KaROO0XFTEMebKAUoXJ3bCSS9ORTK-mrErEUfbuEPclahVGWTAK0rpgI4xDPjjaPf7K9SsdBUqWWX-J6fP_hdHDwjb7O3XuK3K8p7MGjcxgWQzu4fJ1M2WdWqv3geru3J5VGeCxPhBjaZzrBu3grkA3lJpsFFS8fY2sb9aaWtkooYUCAxNDbWsRphee_qjECreKwsf_SwTiVfOA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "localhost/api/lembretes/9a8243f8-04ef-474c-89e4-d59af31cff4c/completar",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "lembretes",
+            "9a8243f8-04ef-474c-89e4-d59af31cff4c",
+            "completar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost/api/lembretes/9a8243f8-04ef-474c-89e4-d59af31cff4c",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ6b3Rpb24tYmFja2VuZCIsInN1YiI6ImQ3NDUzMGQwLWM5NDUtNGQ0MS1iYmY2LTViODEwZTU2YjZkZSIsImV4cCI6MTc3MDMzNTEyNCwiaWF0IjoxNzcwMzM0ODI0LCJzY29wZSI6IiJ9.hzoPo5fIiglu4FGrolVhszcskTGfdL9ufNj5FhJaffkaCQMAzyzZdzgC8480FoiTj8QC9-fbYgGjfLlj0DVTQxnF9wsP6RWim1oelntciFpK-GnVQD7ptAd8hvHfsOm2rtr8lR-KaROO0XFTEMebKAUoXJ3bCSS9ORTK-mrErEUfbuEPclahVGWTAK0rpgI4xDPjjaPf7K9SsdBUqWWX-J6fP_hdHDwjb7O3XuK3K8p7MGjcxgWQzu4fJ1M2WdWqv3geru3J5VGeCxPhBjaZzrBu3grkA3lJpsFFS8fY2sb9aaWtkooYUCAxNDbWsRphee_qjECreKwsf_SwTiVfOA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost/api/lembretes/9a8243f8-04ef-474c-89e4-d59af31cff4c",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "lembretes",
+            "9a8243f8-04ef-474c-89e4-d59af31cff4c"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
