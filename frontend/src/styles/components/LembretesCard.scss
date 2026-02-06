@@ -1,0 +1,101 @@
+.reminder-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 6px solid #3a3a3c;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        transform: scale(1.01);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &.done {
+        opacity: 0.4;
+
+        .info h4,
+        .info p {
+            text-decoration: line-through;
+        }
+    }
+
+    &.prio-1 {
+        border-left-color: #34c759;
+    }
+
+    // Baixa
+    &.prio-2 {
+        border-left-color: #ffcc00;
+    }
+
+    // Média
+    &.prio-3 {
+        border-left-color: #ff3b30;
+    }
+
+    // Alta
+
+    .info {
+        flex: 1;
+        padding-right: 20px;
+
+        h4 {
+            margin: 0;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .prio-tag {
+                font-size: 10px;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 2px 8px;
+                border-radius: 4px;
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .preview-text {
+            margin: 8px 0;
+            color: #8e8e93;
+            font-size: 15px;
+            display: -webkit-box;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        small {
+            color: #007aff;
+            font-weight: 700;
+        }
+    }
+
+    .action-side {
+        .check-circle {
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &.checked {
+                background: #32d74b;
+                border-color: #32d74b;
+                box-shadow: 0 0 15px rgba(50, 215, 75, 0.3);
+            }
+
+            &:hover {
+                transform: scale(1.15);
+                border-color: #007aff;
+            }
+        }
+    }
+}

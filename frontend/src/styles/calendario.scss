@@ -1,0 +1,167 @@
+.calendario-page-full {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: white;
+
+  .calendario-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .seletor {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0;
+        min-width: 220px;
+        text-align: center;
+        letter-spacing: -0.5px;
+      }
+
+      button {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background: #007aff;
+          border-color: #007aff;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .hoje-btn {
+      background: #007aff;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background: #0056b3;
+        box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+      }
+    }
+  }
+
+  .calendario-grid-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .dias-semana {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); 
+      margin-bottom: 10px;
+      
+      div {
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+        text-transform: uppercase;
+      }
+    }
+
+    .grade-dias {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); 
+      gap: 10px;
+      flex: 1;
+
+      .dia {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 12px;
+        min-height: 90px;
+        aspect-ratio: 1 / 1; 
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+
+        &.vazio { background: transparent; border: none; }
+
+        &:not(.vazio):hover {
+          background: rgba(255, 255, 255, 0.07);
+          border-color: rgba(0, 122, 255, 0.5);
+          transform: translateY(-2px);
+        }
+
+        .numero-dia { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+
+        .pontos {
+          display: flex;
+          gap: 4px;
+          flex-wrap: wrap;
+          margin-top: auto;
+
+          .ponto {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover { transform: scale(1.4); }
+            
+            &.prio-1 { background: #ff3b30; box-shadow: 0 0 5px rgba(255, 59, 48, 0.5); }
+            &.prio-2 { background: #ffcc00; box-shadow: 0 0 5px rgba(255, 204, 0, 0.5); }
+            &.prio-3 { background: #34c759; box-shadow: 0 0 5px rgba(52, 199, 89, 0.5); }
+            &.ponto-nota { background: #007aff; box-shadow: 0 0 5px rgba(0, 122, 255, 0.5); }
+          }
+        }
+      }
+    }
+  }
+
+  .modal-detalhes {
+    max-width: 400px;
+    width: 90%;
+
+    .tag-tipo {
+      font-size: 10px;
+      font-weight: 800;
+      color: #007aff;
+      background: rgba(0, 122, 255, 0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .caixa-conteudo {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      p { line-height: 1.6; color: #ccc; white-space: pre-wrap; }
+    }
+
+    button {
+      width: 100%;
+      background: #3a3a3c;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      &:hover { background: #4a4a4c; }
+    }
+  }
+}

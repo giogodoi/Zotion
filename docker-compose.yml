@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: zotion-db
+    networks:
+      - backend-net
+    environment:
+      - POSTGRES_DB=zotion_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d zotion_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: ./backend
+    container_name: zotion-app
+    networks:
+      - backend-net
+      - frontend-net
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/zotion_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - JWT_PUBLIC_KEY=classpath:certs/key.pub
+      - JWT_PRIVATE_KEY=classpath:certs/key.priv
+
+  frontend:
+    build: ./frontend
+    container_name: zotion-frontend
+    networks:
+      - frontend-net
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+networks:
+#Implementada na mentoria (um abraço Édney! Salvou demais :D)
+#Poderiamos fazer uma unica network, a ideia aqui é somente distinguir o acesso do frontend
+#O Frontend não consegue "enxergar" o banco de dados, somente o backend consegue.
+  backend-net: 
+  frontend-net: 
+
+volumes:
+  postgres_data:
