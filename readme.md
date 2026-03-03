@@ -124,7 +124,7 @@ GEMINI_API_KEY=sua_chave_aqui
 
 ---
 
-##  Requisitos Técnicos Atendidos (Desafio I)
+##  Requisitos Técnicos Atendidos (Desafio II)
 
 - **Autenticação:** Implementada via Token JWT. 
 
